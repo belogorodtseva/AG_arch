@@ -1,0 +1,79 @@
+@media screen and (min-width: 480px) {
+
+
+  #scroller {
+      position: relative;
+      opacity: 0.45;
+      z-index: -1;
+      height: 40%;
+  }
+  #scroller .innerScrollArea {
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+  }
+  #scroller ul {
+      padding: 0;
+      margin: 0;
+      position: relative;
+  }
+  #scroller li {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      position: absolute;
+  }
+
+  .mainlogo {
+    position: absolute;
+    top:15%;
+    width: 100%;
+    opacity: 0.55;
+    z-index: 1;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+
+  #scroller {
+      position: relative;
+      opacity: 0.65;
+      z-index: -1;
+      height: 25%;
+  }
+  #scroller .innerScrollArea {
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+  }
+  #scroller ul {
+      padding: 0;
+      margin: 0;
+      position: relative;
+  }
+  #scroller li {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      position: absolute;
+  }
+
+  .mainlogo {
+    opacity: 0;
+  }
+
+  .navbar {
+  position: absolute;
+  top:25%;
+  }
+
+}
