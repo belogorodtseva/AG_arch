@@ -2,20 +2,20 @@
 {% load staticfiles %}
 {% block content %}
 
-<!--Main Photos-->
+<!--Main Photos
 <div id="scroller" style="width: 100%; margin: 0 auto;">
   <div id="slid" class="innerScrollArea">
       <ul>
-          <!-- Define photos here -->
           <li><img id="img1" src="{% static 'img/headphoto/s1.jpg' %}" width="auto" height="100%" /></li>
           <li><img id="img2" src="{% static 'img/headphoto/s2.jpg' %}" width="auto" height="100%" /></li>
           <li><img id="img3" src="{% static 'img/headphoto/s3.jpg' %}" width="auto" height="100%" /></li>
           <li><img id="img4" src="{% static 'img/headphoto/s4.jpg' %}" width="auto" height="100%" /></li>
           <li><img id="img5" src="{% static 'img/headphoto/s5.jpg' %}" width="auto" height="100%" /></li>
-
       </ul>
   </div>
-</div>
+</div>-->
+
+<div id="scroller"></div>
 <!--Menu-->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -43,28 +43,48 @@
 <!--Service Photos-->
 <div class='sphoto'>
   <center>
-  <div class="stext">
-  <img id="img1" src="{% static 'img/headphoto/g1.gif' %}" />
+  <div class="stext" onclick="toggle(arch_content)">
+    <div class="slider">
+      <img id='imga1' src="{% static 'img/headphoto/a1.jpg' %}" />
+      <img id='imga2' src="{% static 'img/headphoto/a2.jpg' %}" />
+      <img id='imga3' src="{% static 'img/headphoto/a3.jpg' %}" />
+      <img id='imga4' src="{% static 'img/headphoto/a4.jpg' %}" />
+    </div>
   <h2>architecture</h2>
   </div>
-  <div class="stext">
-  <img id="img1" src="{% static 'img/headphoto/g2.gif' %}"  />
+  <div class="stext" onclick="toggle(indesign_content)">
+    <div class="slider">
+      <img id='imga1' src="{% static 'img/headphoto/d1.jpg' %}" />
+      <img id='imga2' src="{% static 'img/headphoto/d2.jpg' %}" />
+      <img id='imga3' src="{% static 'img/headphoto/d3.jpg' %}" />
+      <img id='imga4' src="{% static 'img/headphoto/d4.jpg' %}" />
+    </div>
   <h2>interior design</h2>
   </div>
-  <div class="stext">
-  <img id="img1" src="{% static 'img/headphoto/g3.gif' %}"  />
+  <div class="stext" onclick="toggle(as_content)">
+    <div class="slider">
+      <img id='imga1' src="{% static 'img/headphoto/s1.jpg' %}" />
+      <img id='imga2' src="{% static 'img/headphoto/s2.jpg' %}" />
+      <img id='imga3' src="{% static 'img/headphoto/s3.jpg' %}" />
+      <img id='imga4' src="{% static 'img/headphoto/s4.jpg' %}" />
+    </div>
   <h2>architects supervision</h2>
   </div>
-  <div class="stext">
-  <img id="img1" src="{% static 'img/headphoto/g4.gif' %}"  />
+  <div class="stext" onclick="toggle(prdesign_content)">
+    <div class="slider">
+      <img id='imga1' src="{% static 'img/headphoto/p1.jpg' %}" />
+      <img id='imga2' src="{% static 'img/headphoto/p2.jpg' %}" />
+      <img id='imga3' src="{% static 'img/headphoto/p3.jpg' %}" />
+      <img id='imga4' src="{% static 'img/headphoto/p4.jpg' %}" />
+    </div>
   <h2>product design</h2>
   </div>
 </center>
 </div>
 
 <!--Main Content-->
-<div class='service' style="width: 100%; margin: 0 auto; position : relative; top : 10px;">
-  <div class='as_content'>
+<div class='service' style="width: 80%; margin: 0 auto; position : relative; top : 10px;">
+  <div id='as_content'>
     {% for AS in Architects_supervision %}
       <h2>{{AS.name}}</h2>
       <h3>{{AS.description}}</h3>
@@ -78,7 +98,7 @@
     {% endfor %}
   </div>
 
-  <div class='arch_content'>
+  <div id='arch_content'>
     {% for AR in Architecture %}
       <h2>{{AR.name}}</h2>
       <h3>{{AR.description}}</h3>
@@ -100,7 +120,7 @@
     {% endfor %}
   </div>
 
-  <div class='indesign_content'>
+  <div id='indesign_content'>
     {% for ID in Interior_design %}
       <h2>{{ID.name}}</h2>
       <h3>{{ID.description}}</h3>
@@ -113,7 +133,7 @@
     {% endfor %}
   </div>
 
-  <div class='prdesign_content'>
+  <div id='prdesign_content'>
     {% for PD in Product_design %}
       <h2>{{PD.name}}</h2>
       <h3>{{PD.description}}</h3>
@@ -130,16 +150,18 @@
 {% block script %}
 <script>
 if(window.screen.width > 480) {
+  $(document).ready(function() {
+    $('.slider').cycle({
+        fx:     'fade',
+        rev: 1,
+    });
 
-  $(document).ready(function(){
-    $('.mainlogo').each(function(){
-      $(this).animate({opacity:'0'},1);
-      $(this).mouseover(function(){
-        $(this).stop().animate({opacity:'0.7'},600);
-      });
-      $(this).mouseout(function(){
-        $(this).stop().animate({opacity:'0'},300);
-      }); }); });
+  });
+}
+</script>
+<script>
+function toggle(el) {
+el.style.display = (el.style.display == 'none') ? '' : 'none'
 }
 </script>
 {% endblock %}

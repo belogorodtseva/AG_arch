@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{% static 'css/slider_comp.css' %}" type = "text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://malsup.github.com/jquery.cycle.all.js"></script> 
 </head>
 <body>
   <!--Main Logo-->
@@ -29,7 +30,7 @@
         <img src="{% static 'img/heart.png' %}" style='max-height:20px;' alt="fb">
         <img src="{% static 'img/bulb.png' %}" style='max-height:20px;' alt="fb">
       </div>
-      <!--Footer`s info<div id="particles-js"></div>-->
+
       <div style="float: left;">
         <p>AG architecture © 2017</p>
       </div>
@@ -72,6 +73,7 @@
         setInterval(doScroll, 20);
         tweenToNewSpeed(controller.fullSpeed);
     });
+
 
     $(document).ready(function(){
       $('.mainlogo').each(function(){
@@ -116,3 +118,4 @@
     {% block script %}
     {% endblock %}
 </body>
+</html>

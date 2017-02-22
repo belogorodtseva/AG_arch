@@ -2,6 +2,8 @@
 
 @media screen and (min-width: 480px) {
 
+
+
   #scroller {
       position: relative;
       top:0;
@@ -22,13 +24,7 @@
       margin: 0;
       position: relative;
   }
-  .mainlogo {
-    position: absolute;
-    margin-top: 10%;
-    width: 100%;
-    opacity: 0.55;
-    z-index:3;
-  }
+
   #scroller li {
       padding: 0;
       margin: 0;
@@ -36,6 +32,13 @@
       position: absolute;
   }
 
+  .mainlogo {
+    position: absolute;
+    margin-top: 10%;
+    width: 100%;
+    opacity: 0.55;
+    z-index:3;
+  }
   .navbar {
   position: relative;
   top:0;
@@ -52,42 +55,49 @@
   .stext {
     display:inline-block;
     position: relative;
-    margin-left:2.5%;
-    margin-right: 2.5%;
-    margin-bottom: 5%;
-    max-width: 480px;
+
+    max-width: 600px;
   }
 
-  .sphoto img {
-    min-height: 200px;
-    max-width: 480px;
+  .slider {
+    position: relative;
     opacity: 0.6;
   }
 
-  .sphoto .stext:hover {
-    border-top: 1px solid red;
-    border-left: 2px solid red;
-    border-bottom: 3px solid #fff;
-    opacity: 0.9;
-    font-size: 46px;
-    font-weight: bold;
-    color: #fff;
+  .sphoto img {
+    min-height: 150px;
+    max-width: 600px;
+    opacity: 0.6;
+
   }
 
+  .stext:hover {
+
+    text-shadow: 2px 2px #000;
+    filter: invert(100%);
+    font-size: 46px;
+}
 
 .stext h2 {
   text-transform: uppercase;
   position: absolute;
-  top:10px;
-  left: 10px;
 
-  font-size: 46px;
+  color: #fff;
+  top:20%;
+  left: 10%;
+  font-size: 50px;
+  z-index: 6;
 }
 
+#arch_title{cursor:pointer;}
+#as_title{cursor: pointer;}
+#indesign_title{cursor:pointer;}
+#prdesign_title{cursor: pointer;}
 
-
-
-
+.arch_content{display:none;}
+.as_content{display:none;}
+.indesign_content{display:none;}
+.prdesign_content{display:none;}
 
 }
 
@@ -122,7 +132,7 @@
 
   .mainlogo {
     opacity: 0;
-    display: none;
+    display: block;
   }
 
   .sphoto {
