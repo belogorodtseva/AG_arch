@@ -1,6 +1,145 @@
 {% extends "mainpage.html" %}
-
+{% load staticfiles %}
 {% block content %}
 
+<!--Main Photos-->
+<div id="scroller" style="width: 100%; margin: 0 auto;">
+  <div id="slid" class="innerScrollArea">
+      <ul>
+          <!-- Define photos here -->
+          <li><img id="img1" src="{% static 'img/headphoto/s1.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img2" src="{% static 'img/headphoto/s2.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img3" src="{% static 'img/headphoto/s3.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img4" src="{% static 'img/headphoto/s4.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img5" src="{% static 'img/headphoto/s5.jpg' %}" width="auto" height="100%" /></li>
 
+      </ul>
+  </div>
+</div>
+<!--Menu-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar" style="display: block;">
+      <ul class="nav navbar-nav navbar-center">
+        <li><a href="/architecture/">ARCHITECTURE</a></li>
+        <li><a href="/design/">DESIGN</a></li>
+        <li class="dropdown">
+          <a href="/services/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded=true >SERVICES <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/">architecture</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/">interior design</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/">product design</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/">architects supervision</a></li>
+          </ul>
+        </li>
+        <li><a href="/contact/">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Service Photos-->
+<div class='sphoto'>
+  <center>
+  <div class="stext">
+  <img id="img1" src="{% static 'img/headphoto/g1.gif' %}" />
+  <h2>architecture</h2>
+  </div>
+  <div class="stext">
+  <img id="img1" src="{% static 'img/headphoto/g2.gif' %}"  />
+  <h2>interior design</h2>
+  </div>
+  <div class="stext">
+  <img id="img1" src="{% static 'img/headphoto/g3.gif' %}"  />
+  <h2>architects supervision</h2>
+  </div>
+  <div class="stext">
+  <img id="img1" src="{% static 'img/headphoto/g4.gif' %}"  />
+  <h2>product design</h2>
+  </div>
+</center>
+</div>
+
+<!--Main Content-->
+<div class='service' style="width: 100%; margin: 0 auto; position : relative; top : 10px;">
+  <div class='as_content'>
+    {% for AS in Architects_supervision %}
+      <h2>{{AS.name}}</h2>
+      <h3>{{AS.description}}</h3>
+      {% for PAS in Paragraphs_AS %}
+        <p>- {{PAS.paragraph}} </p>
+      {% endfor %}
+      <h3>{{AS.terms_name}}</h3>
+      <h3>{{AS.terms}}</h3>
+      <h3>{{AS.cost_name}}</h3>
+      <h3>{{AS.cost}}</h3>
+    {% endfor %}
+  </div>
+
+  <div class='arch_content'>
+    {% for AR in Architecture %}
+      <h2>{{AR.name}}</h2>
+      <h3>{{AR.description}}</h3>
+      <h3>{{AR.schematic_desing_name}}:</h3>
+      {% for ARSD in Paragraphs_Arch_SD %}
+        <p>- {{ARSD.paragraph}} </p>
+      {% endfor %}
+      <h3>{{AR.desing_development_name}}:</h3>
+      {% for ARDD in Paragraphs_Arch_DD %}
+        <p>- {{ARDD.paragraph}} </p>
+      {% endfor %}
+      <h3>{{AR.construction_documents_name}}</h3>
+      <h3>{{AR.construction_documents_description}}</h3>
+      {% for ARCD in Paragraphs_Arch_CD %}
+        <p>- {{ARCD.paragraph}} </p>
+      {% endfor %}
+      <h3>{{AR.terms_name}}:{{AR.terms}}</h3>
+      <h3>{{AR.cost_name}}:{{AR.cost}}</h3>
+    {% endfor %}
+  </div>
+
+  <div class='indesign_content'>
+    {% for ID in Interior_design %}
+      <h2>{{ID.name}}</h2>
+      <h3>{{ID.description}}</h3>
+      <h3>{{ID.paragraphs_name}}:</h3>
+      {% for PID in Paragraphs_ID %}
+        <p>- {{PID.paragraph}} </p>
+      {% endfor %}
+      <h3>{{ID.terms_name}}:{{ID.terms}}</h3>
+      <h3>{{ID.cost_name}}:{{ID.cost}}</h3>
+    {% endfor %}
+  </div>
+
+  <div class='prdesign_content'>
+    {% for PD in Product_design %}
+      <h2>{{PD.name}}</h2>
+      <h3>{{PD.description}}</h3>
+      <h3>{{PD.paragraphs_name}}:</h3>
+      {% for PPD in Paragraphs_PD %}
+        <p>- {{PPD.paragraph}} </p>
+      {% endfor %}
+      <h3>{{PD.terms_name}}:{{PD.terms}}</h3>
+      <h3>{{PD.cost_name}}:{{PD.cost}}</h3>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+if(window.screen.width > 480) {
+
+  $(document).ready(function(){
+    $('.mainlogo').each(function(){
+      $(this).animate({opacity:'0'},1);
+      $(this).mouseover(function(){
+        $(this).stop().animate({opacity:'0.7'},600);
+      });
+      $(this).mouseout(function(){
+        $(this).stop().animate({opacity:'0'},300);
+      }); }); });
+}
+</script>
 {% endblock %}

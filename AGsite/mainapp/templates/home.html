@@ -8,7 +8,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="static/js/app.js"></script>
+  <script>
+  if (screen && screen.width > 480) {
+    document.write('<script src="static/js/app.js"><\/script>');
+  }
+  </script>
   <!--Change opacity of mainlogo by moving mouse-->
   <script>
   $(document).ready(function(){

@@ -1,0 +1,33 @@
+{% extends "mainpage.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<!--Main Photos-->
+<div id="scroller" style="width: 100%; margin: 0 auto;">
+  <div id="slid" class="innerScrollArea">
+      <ul>
+          <!-- Define photos here -->
+          <li><img id="img1" src="{% static 'img/headphoto/a1.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img2" src="{% static 'img/headphoto/a2.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img3" src="{% static 'img/headphoto/a3.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img4" src="{% static 'img/headphoto/a4.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img5" src="{% static 'img/headphoto/a5.jpg' %}" width="auto" height="100%" /></li>
+
+      </ul>
+  </div>
+</div>
+
+<!--Menu-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar" style="display: block;">
+      <ul class="nav navbar-nav navbar-center">
+        <li><a href="/architecture/">ARCHITECTURE</a></li>
+        <li><a href="/design/">DESIGN</a></li>
+        <li><a href="/services/">SERVICES</a></li>
+        <li><a href="/contact/">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}

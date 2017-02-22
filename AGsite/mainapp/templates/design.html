@@ -1,44 +1,33 @@
-<!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/lib/w3.css">
+{% extends "mainpage.html" %}
 {% load staticfiles %}
-<style>
-.hphoto {display:none;}
-</style>
-<body>
+{% block content %}
 
-<h2 class="w3-center">Automatic Slideshow</h2>
-<div id="scroller" style="width: 100%; height: 40%; margin: 0 auto;">
-<div class="w3-content w3-section" style="max-width:500px">
-    <ul>
-            <!-- Define photos here -->
-            <li><img class="hphoto" src="{% static 'img/headphoto/s1.jpg' %}" width="auto" height="100%" /></li>
-            <li><img class="hphoto" src="{% static 'img/headphoto/s2.jpg' %}" width="auto" height="100%" /></li>
-            <li><img class="hphoto" src="{% static 'img/headphoto/s3.jpg' %}" width="auto" height="100%" /></li>
-            <li><img class="hphoto" src="{% static 'img/headphoto/s4.jpg' %}" width="auto" height="100%" /></li>
-            <li><img class="hphoto" src="{% static 'img/headphoto/s5.jpg' %}" width="auto" height="100%" /></li>
+<!--Main Photos-->
+<div id="scroller" style="width: 100%; margin: 0 auto;">
+  <div id="slid" class="innerScrollArea">
+      <ul>
+          <!-- Define photos here -->
+          <li><img id="img1" src="{% static 'img/headphoto/d1.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img2" src="{% static 'img/headphoto/d2.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img3" src="{% static 'img/headphoto/d3.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img4" src="{% static 'img/headphoto/d4.jpg' %}" width="auto" height="100%" /></li>
+          <li><img id="img5" src="{% static 'img/headphoto/d5.jpg' %}" width="auto" height="100%" /></li>
 
-        </ul>
+      </ul>
+  </div>
 </div>
-</div>
-<script>
-var myIndex = 0;
-carousel();
+<!--Menu-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar" style="display: block;">
+      <ul class="nav navbar-nav navbar-center">
+        <li><a href="/architecture/">ARCHITECTURE</a></li>
+        <li><a href="/design/">DESIGN</a></li>
+        <li><a href="/services/">SERVICES</a></li>
+        <li><a href="/contact/">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("hphoto");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-</script>
-
-</body>
-</html>
+{% endblock %}

@@ -1,10 +1,12 @@
-@media screen and (min-width: 480px) {
 
+
+@media screen and (min-width: 480px) {
 
   #scroller {
       position: relative;
+      top:0;
       opacity: 0.45;
-      z-index: -1;
+      z-index: 2;
       height: 40%;
   }
   #scroller .innerScrollArea {
@@ -20,6 +22,13 @@
       margin: 0;
       position: relative;
   }
+  .mainlogo {
+    position: absolute;
+    margin-top: 10%;
+    width: 100%;
+    opacity: 0.55;
+    z-index:3;
+  }
   #scroller li {
       padding: 0;
       margin: 0;
@@ -27,24 +36,68 @@
       position: absolute;
   }
 
-  .mainlogo {
-    position: absolute;
-    top:15%;
-    width: 100%;
-    opacity: 0.55;
-    z-index: 1;
+  .navbar {
+  position: relative;
+  top:0;
   }
+
+  .sphoto {
+    display:inline-block;
+    position: relative;
+    margin-top: 5%;
+
+    background-color: transparent;
+  }
+
+  .stext {
+    display:inline-block;
+    position: relative;
+    margin-left:2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 5%;
+    max-width: 480px;
+  }
+
+  .sphoto img {
+    min-height: 200px;
+    max-width: 480px;
+    opacity: 0.6;
+  }
+
+  .sphoto .stext:hover {
+    border-top: 1px solid red;
+    border-left: 2px solid red;
+    border-bottom: 3px solid #fff;
+    opacity: 0.9;
+    font-size: 46px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+
+.stext h2 {
+  text-transform: uppercase;
+  position: absolute;
+  top:10px;
+  left: 10px;
+
+  font-size: 46px;
+}
+
+
+
+
+
 
 }
 
 
 @media (max-width: 480px) {
 
-
   #scroller {
       position: relative;
       opacity: 0.65;
-      z-index: -1;
+      z-index: 2;
       height: 25%;
   }
   #scroller .innerScrollArea {
@@ -69,11 +122,16 @@
 
   .mainlogo {
     opacity: 0;
+    display: none;
+  }
+
+  .sphoto {
+    display: none;
   }
 
   .navbar {
-  position: absolute;
-  top:25%;
+  position: relative;
+  top:0;
   }
 
 }
