@@ -28,7 +28,7 @@ class Architecture(models.Model):
     schematic_desing_name =  models.CharField(max_length=100)
     desing_development_name =  models.CharField(max_length=100)
     construction_documents_name =  models.CharField(max_length=100)
-    construction_documents_description = models.TextField
+    construction_documents_description = models.CharField(max_length=100, default='description')
 
     def __str__(self):
         return self.name

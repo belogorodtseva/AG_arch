@@ -1,6 +1,12 @@
 {% extends "mainpage.html" %}
 {% load staticfiles %}
 {% block content %}
+<!--Main Logo-->
+<div class="mainlogo" style="position:relative; height:25%; display:block;">
+  <center>
+  <img src="{% static 'img/logo.png' %}" style="max-width: 250px; margin-top:30px;"alt="AG" id = 'blabla'>
+  </center>
+</div>
 
 <!--Main Photos
 <div id="scroller" style="width: 100%; margin: 0 auto;">
@@ -15,7 +21,7 @@
   </div>
 </div>-->
 
-<div id="scroller"></div>
+<div id="scroller" style="display:none;"></div>
 <!--Menu-->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -23,68 +29,85 @@
       <ul class="nav navbar-nav navbar-center">
         <li><a href="/architecture/">ARCHITECTURE</a></li>
         <li><a href="/design/">DESIGN</a></li>
-        <li class="dropdown">
-          <a href="/services/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded=true >SERVICES <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/">architecture</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="/">interior design</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="/">product design</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="/">architects supervision</a></li>
-          </ul>
-        </li>
+        <li><a href="/design/">SERVICES</a></li>
         <li><a href="/contact/">CONTACT</a></li>
       </ul>
     </div>
   </div>
 </nav>
+<!--Service PHOTO MOBILE-->
+<div class='sphotomob'>
+  <center>
+  <div class="stextmob" id='archym'><a href="#archx">
+      <img id='imga1' src="{% static 'img/headphoto/a1.jpg' %}" />
+      <h2>architecture</h2></a>
+  </div>
+  <div class="stextmob" id='inym'><a href="#inx">
+      <img id='imga1' src="{% static 'img/headphoto/d1.jpg' %}" />
+      <h2>interior design</h2></a>
+  </div>
+  <div class="stextmob" id='asym'><a href="#asx">
+      <img id='imga4' src="{% static 'img/headphoto/s4.jpg' %}" />
+      <h2>architects supervision</h2> </a>
+  </div>
+  <div class="stextmob" id='prym'><a href="#prx">
+      <img id='imga4' src="{% static 'img/headphoto/p4.jpg' %}" />
+      <h2>product design</h2> </a>
+  </div>
+</center>
+</div>
+
+
 <!--Service Photos-->
 <div class='sphoto'>
   <center>
-  <div class="stext" onclick="toggle(arch_content)">
-    <div class="slider">
+  <div class="stext" id='archy'><a href="#archx">
+    <div class="slider"><div class="slider1">
       <img id='imga1' src="{% static 'img/headphoto/a1.jpg' %}" />
       <img id='imga2' src="{% static 'img/headphoto/a2.jpg' %}" />
       <img id='imga3' src="{% static 'img/headphoto/a3.jpg' %}" />
       <img id='imga4' src="{% static 'img/headphoto/a4.jpg' %}" />
-    </div>
+    </div></div>
   <h2>architecture</h2>
+  </a>
   </div>
-  <div class="stext" onclick="toggle(indesign_content)">
-    <div class="slider">
+  <div class="stext" id='iny'><a href="#inx">
+    <div class="slider"><div class="slider2">
       <img id='imga1' src="{% static 'img/headphoto/d1.jpg' %}" />
       <img id='imga2' src="{% static 'img/headphoto/d2.jpg' %}" />
       <img id='imga3' src="{% static 'img/headphoto/d3.jpg' %}" />
       <img id='imga4' src="{% static 'img/headphoto/d4.jpg' %}" />
-    </div>
+    </div></div>
   <h2>interior design</h2>
+  </a>
   </div>
-  <div class="stext" onclick="toggle(as_content)">
-    <div class="slider">
+  <div class="stext" id='asy'><a href="#asx">
+    <div class="slider"><div class="slider3">
       <img id='imga1' src="{% static 'img/headphoto/s1.jpg' %}" />
       <img id='imga2' src="{% static 'img/headphoto/s2.jpg' %}" />
       <img id='imga3' src="{% static 'img/headphoto/s3.jpg' %}" />
       <img id='imga4' src="{% static 'img/headphoto/s4.jpg' %}" />
-    </div>
+    </div></div>
   <h2>architects supervision</h2>
+  </a>
   </div>
-  <div class="stext" onclick="toggle(prdesign_content)">
-    <div class="slider">
+  <div class="stext" id='pry'><a href="#prx">
+    <div class="slider"><div class="slider4">
       <img id='imga1' src="{% static 'img/headphoto/p1.jpg' %}" />
       <img id='imga2' src="{% static 'img/headphoto/p2.jpg' %}" />
       <img id='imga3' src="{% static 'img/headphoto/p3.jpg' %}" />
       <img id='imga4' src="{% static 'img/headphoto/p4.jpg' %}" />
-    </div>
+    </div></div>
   <h2>product design</h2>
+  </a>
   </div>
 </center>
 </div>
 
 <!--Main Content-->
-<div class='service' style="width: 80%; margin: 0 auto; position : relative; top : 10px;">
-  <div id='as_content'>
+<div class='service' style="width: 80%; margin: 0 auto; position : relative; top : 10px; bottom : 30px;">
+  <div id='as_content' style="display: none;">
+    <section id="asx">
     {% for AS in Architects_supervision %}
       <h2>{{AS.name}}</h2>
       <h3>{{AS.description}}</h3>
@@ -96,9 +119,11 @@
       <h3>{{AS.cost_name}}</h3>
       <h3>{{AS.cost}}</h3>
     {% endfor %}
+  </section>
   </div>
 
-  <div id='arch_content'>
+  <div id='arch_content' style="display: none;">
+    <section id="archx">
     {% for AR in Architecture %}
       <h2>{{AR.name}}</h2>
       <h3>{{AR.description}}</h3>
@@ -118,9 +143,11 @@
       <h3>{{AR.terms_name}}:{{AR.terms}}</h3>
       <h3>{{AR.cost_name}}:{{AR.cost}}</h3>
     {% endfor %}
+  </section>
   </div>
 
-  <div id='indesign_content'>
+  <div id='indesign_content' style="display: none;">
+  <section id="inx">
     {% for ID in Interior_design %}
       <h2>{{ID.name}}</h2>
       <h3>{{ID.description}}</h3>
@@ -131,9 +158,11 @@
       <h3>{{ID.terms_name}}:{{ID.terms}}</h3>
       <h3>{{ID.cost_name}}:{{ID.cost}}</h3>
     {% endfor %}
+  </section>
   </div>
 
-  <div id='prdesign_content'>
+  <div id='prdesign_content' style="display: none;">
+  <section id="prx">
     {% for PD in Product_design %}
       <h2>{{PD.name}}</h2>
       <h3>{{PD.description}}</h3>
@@ -144,24 +173,99 @@
       <h3>{{PD.terms_name}}:{{PD.terms}}</h3>
       <h3>{{PD.cost_name}}:{{PD.cost}}</h3>
     {% endfor %}
+  </section>
   </div>
+<div style="height:40px"></div>
 </div>
 {% endblock %}
 {% block script %}
 <script>
 if(window.screen.width > 480) {
   $(document).ready(function() {
-    $('.slider').cycle({
+    $('.slider1').cycle({
         fx:     'fade',
         rev: 1,
     });
-
+    $('.slider2').cycle({
+        fx:     'fade',
+        rev: 1,
+    });
+    $('.slider3').cycle({
+        fx:     'fade',
+        rev: 1,
+    });
+    $('.slider4').cycle({
+        fx:     'fade',
+        rev: 1,
+    });
   });
 }
 </script>
 <script>
-function toggle(el) {
-el.style.display = (el.style.display == 'none') ? '' : 'none'
-}
+  $(document).ready(function(){
+  $(".sphoto, sphotomob").on("click","a", function (event) {
+   //отменяем стандартную обработку нажатия по ссылке
+   event.preventDefault();
+   //забираем идентификатор бока с атрибута href
+   var id  = $(this).attr('href'),
+   //узнаем высоту от начала страницы до блока на который ссылается якорь
+     top = $(id).offset().top;
+   //анимируем переход на расстояние - top за 1500 мс
+   $('body,html').animate({scrollTop: top}, 1500);
+  });
+  });
+</script>
+<script>
+$(document).ready(function(){
+    $("#archy").click(function(){
+        $("#as_content").hide();
+        $("#indesign_content").hide();
+        $("#prdesign_content").hide();
+        $("#arch_content").show();
+    });
+    $("#asy").click(function(){
+        $("#arch_content").hide();
+        $("#indesign_content").hide();
+        $("#prdesign_content").hide();
+        $("#as_content").show();
+    });
+    $("#iny").click(function(){
+        $("#as_content").hide();
+        $("#arch_content").hide();
+        $("#prdesign_content").hide();
+        $("#indesign_content").show();
+    });
+    $("#pry").click(function(){
+        $("#arch_content").hide();
+        $("#indesign_content").hide();
+        $("#as_content").hide();
+        $("#prdesign_content").show();
+    });
+    $("#archym").click(function(){
+        $("#as_content").hide();
+        $("#indesign_content").hide();
+        $("#prdesign_content").hide();
+        $("#arch_content").show();
+    });
+    $("#asym").click(function(){
+        $("#arch_content").hide();
+        $("#indesign_content").hide();
+        $("#prdesign_content").hide();
+        $("#as_content").show();
+    });
+    $("#inym").click(function(){
+        $("#as_content").hide();
+        $("#arch_content").hide();
+        $("#prdesign_content").hide();
+        $("#indesign_content").show();
+    });
+    $("#prym").click(function(){
+        $("#arch_content").hide();
+        $("#indesign_content").hide();
+        $("#as_content").hide();
+        $("#prdesign_content").show();
+    });
+
+});
 </script>
 {% endblock %}

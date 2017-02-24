@@ -55,7 +55,8 @@
   .stext {
     display:inline-block;
     position: relative;
-
+    top:0;
+    left:0;
     max-width: 600px;
   }
 
@@ -89,15 +90,7 @@
   z-index: 6;
 }
 
-#arch_title{cursor:pointer;}
-#as_title{cursor: pointer;}
-#indesign_title{cursor:pointer;}
-#prdesign_title{cursor: pointer;}
-
-.arch_content{display:none;}
-.as_content{display:none;}
-.indesign_content{display:none;}
-.prdesign_content{display:none;}
+.sphotomob {display: none;}
 
 }
 
@@ -131,13 +124,51 @@
   }
 
   .mainlogo {
-    opacity: 0;
-    display: block;
-  }
-
-  .sphoto {
+    opacity: 0.6;
     display: none;
   }
+
+  .sphoto {display: none;}
+
+  .sphotomob {
+    display:inline-block;
+    position: relative;
+    margin-top: 0px;
+    background-color: transparent;
+  }
+  .stextmob {
+    display:inline-block;
+    position: relative;
+    top:0;
+    left:0;
+    max-height: 150px;
+    width: auto;
+  }
+  .sphotomob img {
+    top: 20px;
+    max-height: 150px;
+    width:auto;
+    opacity: 0.6;
+  }
+
+  .stextmob:hover {
+
+    text-shadow: 2px 2px #000;
+    filter: invert(100%);
+    font-size: 30px;
+  }
+
+  .stextmob h2 {
+  text-transform: uppercase;
+  position: absolute;
+
+  color: #fff;
+  top:20%;
+  left: 10%;
+  font-size: 25px;
+  z-index: 6;
+  }
+
 
   .navbar {
   position: relative;
