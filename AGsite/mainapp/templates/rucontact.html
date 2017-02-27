@@ -1,0 +1,22 @@
+{% extends "homecontacttemp.html" %}
+{% load staticfiles %}
+
+{% block headin %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" type = "text/css"/>
+{% endblock %}
+{% block menu%}
+  <!--Menu-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-center">
+          <li><a href="/ru/architecture/">АРХИТЕКТУРА</a></li>
+          <li><a href="/ru/design/">ДИЗАЙН</a></li>
+          <li><a href="/ru/services/">УСЛУГИ</a></li>
+          <li><a href="/ru/contact/">КОНТАКТЫ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+{% endblock %}

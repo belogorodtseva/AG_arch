@@ -2,7 +2,9 @@
 
 @media screen and (min-width: 480px) {
 
-
+  particles0-js {
+  height: 100%;
+  }
 
   #scroller {
       position: relative;
@@ -85,7 +87,8 @@
 
   color: #fff;
   top:20%;
-  left: 10%;
+  left: 20%;
+  right: 20%;
   font-size: 50px;
   z-index: 6;
 }
@@ -138,20 +141,21 @@
   }
   .stextmob {
     display:inline-block;
-    position: relative;
+    margin-top: 10px;
+
     top:0;
     left:0;
-    max-height: 150px;
-    width: auto;
+
+    width: 100%;
   }
   .sphotomob img {
-    top: 20px;
-    max-height: 150px;
-    width:auto;
+
+
+    width:100%;
     opacity: 0.6;
   }
 
-  .stextmob:hover {
+  .stextmob img:hover {
 
     text-shadow: 2px 2px #000;
     filter: invert(100%);
@@ -163,10 +167,11 @@
   position: absolute;
 
   color: #fff;
-  top:20%;
-  left: 10%;
+
+  left: 20%;
+  right: 20%;
   font-size: 25px;
-  z-index: 6;
+
   }
 
 

@@ -1,5 +1,7 @@
 from django.db import models
 
+#################################################################### SERVICES #####
+
 class Architects_supervision(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=300, default='some string')
@@ -88,3 +90,14 @@ class Product_design(models.Model):
 class Paragraphs_PD(models.Model):
     paragraph = models.CharField(max_length=300, default='some string')
     language = models.ForeignKey(Product_design, default='1')
+
+
+############################################################################## PROJECTS #######
+
+class Arch_projects(models.Model):
+    name = models.CharField(max_length=300)
+    description = models.CharField(max_length=600)
+    mainimg = models.ImageField(upload_to = 'mainapp/static/img/arch/')
+
+    def __str__(self):
+        return self.name

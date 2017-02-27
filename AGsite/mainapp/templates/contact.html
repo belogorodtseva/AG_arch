@@ -2,22 +2,9 @@
 {% load staticfiles %}
 
 {% block headin %}
-<script>
-if (screen && screen.width > 480) {
-  document.write('<script src="static/js/app.js"><\/script>');
-}
-</script>
-<link rel="stylesheet" href="{% static 'css/home.css' %}" type = "text/css"/>
-<style>
-BODY {
-background: url("{% static 'img/mainimg.jpg' %}");
-background-size: cover;}
-
-
-</style>
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" type = "text/css"/>
 {% endblock %}
 {% block menu%}
-
   <!--Menu-->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -27,8 +14,6 @@ background-size: cover;}
           <li><a href="/en/design/">DESIGN</a></li>
           <li><a href="/en/services/">SERVICES</a></li>
           <li><a href="/en/contact/">CONTACT</a></li>
-          <li><a href="/ru/home/">RU</a></li>
-          <li><a href="/">EN</a></li>
         </ul>
       </div>
     </div>

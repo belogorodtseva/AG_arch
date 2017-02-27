@@ -1,7 +1,7 @@
 {% extends "archdesigntempl.html" %}
 {% load staticfiles %}
 
-{% block xcontent %}
+{% block content %}
 <!--Main Photos-->
 <div class="slider">
   <img id='imga1' src="{% static 'img/headphoto/a1.jpg' %}" />
@@ -29,15 +29,12 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="myNavbar" style="display: block;">
       <ul class="nav navbar-nav navbar-center">
-        <li><a href="/en/architecture/">ARCHITECTURE</a></li>
-        <li><a href="/en/design/">DESIGN</a></li>
-        <li><a href="/en/services/">SERVICES</a></li>
-        <li><a href="/en/contact/">CONTACT</a></li>
+        <li><a href="/ru/architecture/">АРХИТЕКТУРА</a></li>
+        <li><a href="/ru/design/">ДИЗАЙН</a></li>
+        <li><a href="/ru/services/">УСЛУГИ</a></li>
+        <li><a href="/ru/contact/">КОНТАКТЫ</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
-
-</div>
 {% endblock %}

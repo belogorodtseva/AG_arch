@@ -5,11 +5,11 @@
   {% load staticfiles %}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{% static 'css/mainpage.css' %}" type = "text/css"/>
-  <link rel="stylesheet" href="{% static 'css/slider_comp.css' %}" type = "text/css"/>
+  <link rel="stylesheet" href="{% static 'css/archdesign.css' %}" type = "text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://malsup.github.com/jquery.cycle.all.js"></script>
+
   <script>
   if(window.screen.width > 480) {
     $(function(){
@@ -47,8 +47,19 @@
         setInterval(doScroll, 20);
         tweenToNewSpeed(controller.fullSpeed);
     });
+  }
+  if(window.screen.width < 480) {
 
+    $(document).ready(function() {
+      $('.slider').cycle({
+          fx:     'fade',
+          rev: 1,
+      }); });
 
+          }
+  </script>
+
+  <script>
     $(document).ready(function(){
       $('.mainlogo').each(function(){
         $(this).animate({opacity:'0.2'},1);
@@ -58,43 +69,38 @@
         $(this).mouseout(function(){
           $(this).stop().animate({opacity:'0.2'},300);
         }); }); });
-  }
-  if(window.screen.width < 480) {
-    var image_count = 5;
-     var interval = 2000; //пауза
-     var time_out = 15; //скорость смены картинки
-     var i = 5;
-     var timeout;
-     var opacity = 100;
-     function change_image() {
-     opacity--;
-     var j = i + 1;
-     var current_image = 'img' + i;
-     if (i == image_count) j = 1;
-     var next_image = 'img' + j;
-     document.getElementById(current_image).style.opacity=opacity/100;
-     document.getElementById(current_image).style.filter='alpha(opacity='+opacity+')';
-     document.getElementById(next_image).style.opacity= (100-opacity)/100;
-     document.getElementById(next_image).style.filter=' alpha(opacity='+(100-opacity)+')';
-     timeout = setTimeout("change_image()", time_out);
-    if (opacity==1) {
-     opacity = 100;
-     clearTimeout(timeout);
-    i++;
-    if (i>image_count) i=1;
-    timeout = setTimeout("change_image()", interval);
-     }
-     }
-    change_image()
-          }
-    </script>
-  {% block script %}
-  {% endblock %}
+  </script>
 </head>
 <body>
+  <!--Main Logo-->
+  <div class="mainlogo" >
+    <center>
+      <a href="/">
+    <img src="{% static 'img/logo.png' %}" style="max-width: 250px;"alt="AG" id = 'blabla'>
+    </a>
+    </center>
+  </div>
 
-      {% block content %}
+
+
+      {% block xcontent %}
       {% endblock %}
+
+      <!--Main Content-->
+
+      <div class='service' style="width: 50%; margin: auto ; position : relative; top : 10px; float:left; z-index:1;">
+          <section id="asx">
+          {% for AP in Arch_projects %}
+            <h2>{{AP.name}}</h2>
+            <h3>{{AP.description}}</h3>
+            <h3>{{AP.mainimg}}</h3>
+
+          {% endfor %}
+        </section>
+        </div>
+      <div style="height:40px"></div>
+      
+
   <!--Footer-->
   <footer>
     <div class="container">
@@ -105,7 +111,6 @@
         <img src="{% static 'img/heart.png' %}" style='max-height:20px;' alt="fb">
         <img src="{% static 'img/bulb.png' %}" style='max-height:20px;' alt="fb">
       </div>
-
       <div style="float: left;">
         <p>AG architecture © 2017</p>
       </div>
