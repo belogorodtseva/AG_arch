@@ -38,6 +38,20 @@
   </div>
 </nav>
 
+<!--Main Content-->
+
+<div style="width: 50%; position : relative; ">
+
+    {% for AP in Arch_projects %}
+      <div class="archproject" style="">
+      <h2>{{AP.name}}</h2>
+      <img src="{{ AP.mainimg.url }}" width="50%" height="50%" />
+      <h3>{{AP.description}}</h3>
+      </div>
+    {% endfor %}
 
 </div>
+
+<div style="height:40px"></div>
+
 {% endblock %}

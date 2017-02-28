@@ -1,5 +1,4 @@
 from django.db import models
-
 #################################################################### SERVICES #####
 
 class Architects_supervision(models.Model):
@@ -97,7 +96,7 @@ class Paragraphs_PD(models.Model):
 class Arch_projects(models.Model):
     name = models.CharField(max_length=300)
     description = models.CharField(max_length=600)
-    mainimg = models.ImageField(upload_to = 'mainapp/static/img/arch/')
+    mainimg = models.FileField(null=True)
 
     def __str__(self):
         return self.name
