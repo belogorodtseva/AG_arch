@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from mainapp.models import Arch_projects,Architects_supervision,Paragraphs_AS,Architecture,Paragraphs_Arch_SD,Paragraphs_Arch_DD,Paragraphs_Arch_CD,Interior_design,Paragraphs_ID,Product_design,Paragraphs_PD
+from mainapp.models import Arch_photo,Arch_projects,Architects_supervision,Paragraphs_AS,Architecture,Paragraphs_Arch_SD,Paragraphs_Arch_DD,Paragraphs_Arch_CD,Interior_design,Paragraphs_ID,Product_design,Paragraphs_PD
 
 admin.site.register(Architects_supervision)
 admin.site.register(Paragraphs_AS)
@@ -15,3 +15,4 @@ admin.site.register(Paragraphs_ID)
 admin.site.register(Product_design)
 admin.site.register(Paragraphs_PD)
 admin.site.register(Arch_projects)
+admin.site.register(Arch_photo)

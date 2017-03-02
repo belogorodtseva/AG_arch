@@ -60,6 +60,63 @@ opacity: 0.6;
 text-align: right;
 }
 
+.arch {
+  display:inline-block;
+  margin-top: 0px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+.archproject {
+  display: inline-block;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  top:0;
+  left:0;
+  width: 48.8%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30%;
+}
+
+.archprojecttext {
+  background-color: white;
+  overflow: hidden;
+  opacity: 0.6;
+
+  text-transform: uppercase;
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 20%;
+
+  height: 100%;
+  z-index: 5;
+}
+.archproject h2 {
+width:100%;
+float: right;
+font-size: 40px;
+-webkit-margin-before: 0.2em;
+-webkit-margin-after: 0.3em;
+-webkit-margin-start: 0.3em;
+}
+.archproject h3 {
+font-size: 20px;
+float: left;
+-webkit-margin-before: 0.3em;
+-webkit-margin-after: 0.3em;
+-webkit-margin-start: 0.4em;
+-webkit-margin-end: 0.4em;
+}
+
+
+
+
+
 
 @media screen and (min-width: 480px) {
   .slider {
@@ -93,12 +150,14 @@ text-align: right;
       list-style-type: none;
       position: absolute;
   }
+
+
 }
 
 
 @media (max-width: 480px) {
   .mainlogo {
-   height: 30%;
+
    z-index: 2;
  }
 
@@ -119,5 +178,33 @@ text-align: right;
 
   #scroller {display:none;}
 
+
+
+  .archproject {
+
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 55%;
+
+  }
+
+  .archprojecttext{
+    opacity: 0.7;
+    width:60%;
+  }
+
+  .archproject h2 {
+    -webkit-margin-before: 0.1em;
+    -webkit-margin-after: 0.1em;
+  float: left;
+  font-size: 30px;
+  }
+  .archproject h3 {
+  -webkit-margin-before: 0.1em;
+  -webkit-margin-after: 0.1em;
+  font-size: 15px;
+  float: right;
+  color:black;
+  }
 
 }

@@ -12,6 +12,25 @@
 
   <script>
   if(window.screen.width > 480) {
+
+
+    $(document).ready(function(){
+      $('.archprojecttext').each(function(){
+        $(this).animate({opacity:'0.2'},1);
+        $(this).mouseover(function(){
+          $(this).stop().stop()
+          .animate({opacity:'0.8'},200)
+
+          .animate({width:'50%'},600);
+        });
+        $(this).mouseout(function(){
+          $(this).stop()
+          .animate({opacity:'0.2'},200)
+          .animate({width:'20%'},600);;
+
+        }); }); });
+
+
     $(function(){
         var scroller = $('#scroller div.innerScrollArea');
         var scrollerContent = scroller.children('ul');
@@ -86,7 +105,7 @@
       {% block xcontent %}
       {% endblock %}
 
-      
+
 
 
   <!--Footer-->

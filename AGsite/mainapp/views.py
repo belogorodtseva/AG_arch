@@ -1,12 +1,13 @@
 from django.shortcuts import render
-from mainapp.models import Arch_projects,Architects_supervision,Paragraphs_AS,Architecture,Paragraphs_Arch_SD,Paragraphs_Arch_DD,Paragraphs_Arch_CD,Interior_design,Paragraphs_ID,Product_design,Paragraphs_PD
+from mainapp.models import Arch_photo,Arch_projects,Architects_supervision,Paragraphs_AS,Architecture,Paragraphs_Arch_SD,Paragraphs_Arch_DD,Paragraphs_Arch_CD,Interior_design,Paragraphs_ID,Product_design,Paragraphs_PD
 
 def index(request):
     return render(request, 'home.html')
 
 def architecture(request):
     xcontent = {
-        'Arch_projects' : Arch_projects.objects.all(),
+        'Arch_projects' : Arch_projects.objects.all().order_by('id'),
+        'Arch_photo' : Arch_photo.objects.all(),
     }
     return render(request, 'architecture.html', xcontent)
 

@@ -97,6 +97,12 @@ class Arch_projects(models.Model):
     name = models.CharField(max_length=300)
     description = models.CharField(max_length=600)
     mainimg = models.FileField(null=True)
+    side = models.CharField(max_length=20, default='L')
 
     def __str__(self):
         return self.name
+
+
+class Arch_photo(models.Model):
+    archimg = models.FileField(null=True)
+    project = models.ForeignKey(Arch_projects)
