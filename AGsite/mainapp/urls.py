@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^ru/services/', views.ruservices, name='ruservices'),
     url(r'^ru/architecture/', views.ruarchitecture, name='ruarchitecture'),
     url(r'^ru/design/', views.rudesign, name='rudesign'),
+    url(r'^uk/design/', views.ukdesign, name='ukdesign'),
+    url(r'^slideshow/(?P<pk>[0-9]+)/', views.slideshow, name='slideshow'),
     ]

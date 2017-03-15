@@ -14,6 +14,12 @@ def architecture(request):
 def design(request):
     return render(request, 'design.html')
 
+def slideshow(request, pk):
+    photos = {
+        'Arch_photo' : Arch_photo.objects.all().filter(project_id=pk),
+    }
+    return render(request, 'slideshow.html', photos)
+
 def services(request):
     content = {
         'Architects_supervision' : Architects_supervision.objects.all(),
@@ -61,3 +67,6 @@ def ruservices(request):
 
 def rucontact(request):
     return render(request, 'rucontact.html')
+
+def ukdesign(request):
+    return render(request, 'ukdesign.html')

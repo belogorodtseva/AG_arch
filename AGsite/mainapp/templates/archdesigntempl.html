@@ -3,12 +3,14 @@
   <title>AG</title>
   <meta charset="utf-8">
   {% load staticfiles %}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="{% static 'css/archdesign.css' %}" type = "text/css"/>
+  <link rel="stylesheet" href="{% static 'css/archslider.css' %}" type = "text/css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://malsup.github.com/jquery.cycle.all.js"></script>
+  
 
   <script>
   if(window.screen.width > 480) {
@@ -79,6 +81,13 @@
   </script>
 
   <script>
+    $(document).ready(function(){
+      $('.arslider').glide({
+      autoplay: 3500,
+      hoverpause: true, // set to false for nonstop rotate
+      arrowRightText: '&rarr;',
+      arrowLeftText: '&larr;'
+    });   });
     $(document).ready(function(){
       $('.mainlogo').each(function(){
         $(this).animate({opacity:'0.2'},1);

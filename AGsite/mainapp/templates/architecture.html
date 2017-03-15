@@ -45,19 +45,22 @@
 
       {% if AP.side == 'L' %}
         <div class="archproject" style="background-image:url({{ AP.mainimg.url }})">
+          <a href="{% url 'slideshow' pk=AP.pk %}">
             <div class="archprojecttext" >
             <h2>{{AP.name}}</h2>
             <h3>{{AP.description}}</h3>
           </div>
+          </a>
         </div>
       {% endif %}
       {% if AP.side == 'R' %}
         <div class="archproject" style="background-image:url({{ AP.mainimg.url }})">
+          <a href="{% url 'slideshow' pk=AP.pk %}">
             <div class="archprojecttext" style="left:0; right:auto;">
             <h2 style="float:left;">{{AP.name}}</h2>
-
             <h3 style="float:right">{{AP.description}}</h3>
           </div>
+          </a>
         </div>
       {% endif %}
     {% endfor %}
@@ -65,11 +68,10 @@
 
 <div class="archslide" style:"display=none">
   {% for APH in Arch_photo %}
-
       <div class="PH" id="{{ APH.project }}" style="background-image:url({{ APH.archimg.url }})"></div>
-
   {% endfor %}
 </div>
+
 
 
 <div style="height:40px"></div>
