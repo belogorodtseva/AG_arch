@@ -2,6 +2,16 @@
 {% load staticfiles %}
 {% block content %}
 
+<div class="lang">
+  <li class="dropdown-top">
+    <a class="dropdown-top" >EN</a>
+    <ul class="dropdown-inside">
+    <li><a href="/ru/services/">RU</a></li>
+    <li><a href="/ua/services/">UA</a></li>
+    </ul>
+  </li>
+</div>
+
 <!--Menu-->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -15,13 +25,13 @@
     </div>
   </div>
 </nav>
-<!--Service PHOTO MOBILE-->
+<!--Service PHOTO MOBILE
 <div class='sphotomob'>
   <center>
   <div class="stextmob" id='archym' >
     <a href="#archx">
       <h2>architecture</h2>
-      <img id='imga1' src="{% static 'img/headphoto/d1.jpg' %}" />
+      <img id='imga1' src="{% static 'img/headphoto/a1.jpg' %}" />
       </a>
   </div>
   <div class="stextmob" id='inym'><a href="#inx">
@@ -40,13 +50,13 @@
        </a>
   </div>
 </center>
-</div>
+</div>-->
 
 
 <!--Service Photos-->
-<div class='sphoto'>
+<div class='sphoto' >
   <center>
-  <div class="stext" id='archy'><a href="#archx">
+  <div class="stext" id='archy' ><a href="#archx">
     <div class="slider"><div class="slider1">
       <img id='imga1' src="{% static 'img/headphoto/a1.jpg' %}" />
       <img id='imga2' src="{% static 'img/headphoto/a2.jpg' %}" />
@@ -56,7 +66,7 @@
   <h2>architecture</h2>
   </a>
   </div>
-  <div class="stext" id='iny'><a href="#inx">
+  <div class="stext" id='iny' style="float: right;"><a href="#inx">
     <div class="slider"><div class="slider2">
       <img id='imga1' src="{% static 'img/headphoto/d1.jpg' %}" />
       <img id='imga2' src="{% static 'img/headphoto/d2.jpg' %}" />
@@ -76,7 +86,7 @@
   <h2>architects supervision</h2>
   </a>
   </div>
-  <div class="stext" id='pry'><a href="#prx">
+  <div class="stext" id='pry' style="float: right;"><a href="#prx">
     <div class="slider"><div class="slider4">
       <img id='imga1' src="{% static 'img/headphoto/p1.jpg' %}" />
       <img id='imga2' src="{% static 'img/headphoto/p2.jpg' %}" />
@@ -88,6 +98,76 @@
   </div>
 </center>
 </div>
+
+<!--Main Content-->
+<div class='service' style="position : relative; top : 10px; bottom : 30px; z-index:1;">
+  <div id='as_content' style="display: none;">
+    <section id="asx">
+    {% for AS in Architects_supervision %}
+      <h2>{{AS.name_en}}</h2>
+      <h3>{{AS.description_en}}</h3>
+      {% for PAS in Paragraphs_AS %}
+        <p>- {{PAS.paragraph_en}} </p>
+      {% endfor %}
+      <h3>{{AS.terms_name_en}}:{{AS.terms_en}}</h3>
+      <h3>{{AS.cost_name_en}}:{{AS.cost_en}}</h3>
+    {% endfor %}
+  </section>
+  </div>
+
+  <div id='arch_content' style="display: none;">
+    <section id="archx">
+    {% for AR in Architecture %}
+      <h2>{{AR.name_en}}</h2>
+      <h3>{{AR.description_en}}</h3>
+      <h3>{{AR.schematic_desing_name_en}}:</h3>
+      {% for ARSD in Paragraphs_Arch_SD %}
+        <p>- {{ARSD.paragraph_en}} </p>
+      {% endfor %}
+      <h3>{{AR.desing_development_name_en}}:</h3>
+      {% for ARDD in Paragraphs_Arch_DD %}
+        <p>- {{ARDD.paragraph_en}} </p>
+      {% endfor %}
+      <h3>{{AR.construction_documents_name_en}}</h3>
+      <h3>{{AR.construction_documents_description_en}}</h3>
+      {% for ARCD in Paragraphs_Arch_CD %}
+        <p>- {{ARCD.paragraph_en}} </p>
+      {% endfor %}
+      <h3>{{AR.terms_name_en}}:{{AR.terms_en}}</h3>
+      <h3>{{AR.cost_name_en}}:{{AR.cost_en}}</h3>
+    {% endfor %}
+  </section>
+  </div>
+
+  <div id='indesign_content' style="display: none;">
+  <section id="inx">
+    {% for ID in Interior_design %}
+      <h2>{{ID.name_en}}</h2>
+      <h3>{{ID.description_en}}</h3>
+      <h3>{{ID.paragraphs_name_en}}:</h3>
+      {% for PID in Paragraphs_ID %}
+        <p>- {{PID.paragraph_en}} </p>
+      {% endfor %}
+      <h3>{{ID.terms_name_en}}:{{ID.terms_en}}</h3>
+      <h3>{{ID.cost_name_en}}:{{ID.cost_en}}</h3>
+    {% endfor %}
+  </section>
+  </div>
+
+  <div id='prdesign_content' style="display: none;">
+  <section id="prx">
+    {% for PD in Product_design %}
+      <h2>{{PD.name_en}}</h2>
+      <h3>{{PD.description_en}}</h3>
+      <h3>{{PD.paragraphs_name_en}}:</h3>
+      {% for PPD in Paragraphs_PD %}
+        <p>- {{PPD.paragraph_en}} </p>
+      {% endfor %}
+      <h3>{{PD.terms_name_en}}:{{PD.terms_en}}</h3>
+      <h3>{{PD.cost_name_en}}:{{PD.cost_en}}</h3>
+    {% endfor %}
+  </section>
+  </div>
 
 
 

@@ -1,132 +1,32 @@
-<html lang='en'>
-<head>
-  <title>AG</title>
-  <meta charset="utf-8">
-  {% load staticfiles %}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{% extends "all.html" %}
+{% load staticfiles %}
+
+{% block headin %}
   <link rel="stylesheet" href="{% static 'css/services.css' %}" type = "text/css"/>
 
-</head>
-<body>
-  <div id="page-preloader"><span class="spinner"></span></div>
-  <!--Main Logo-->
-  <div class="mainlogo" >
-    <center>
-      <a href="/">
-    <img src="{% static 'img/logo.png' %}" style="max-width: 250px;"alt="AG" id = 'blabla'>
-      </a>
-    </center>
-  </div>
+  <style>
+  BODY {
+  }
+  </style>
+
+{% endblock %}
+
+{% block allcontent %}
 
       {% block content %}
       {% endblock %}
 
-      <!--Main Content-->
-      <div class='service' style="width: 80%; margin: auto ; position : relative; top : 10px; bottom : 30px; z-index:1;">
-        <div id='as_content' style="display: none;">
-          <section id="asx">
-          {% for AS in Architects_supervision %}
-            <h2>{{AS.name}}</h2>
-            <h3>{{AS.description}}</h3>
-            {% for PAS in Paragraphs_AS %}
-              <p>- {{PAS.paragraph}} </p>
-            {% endfor %}
-            <h3>{{AS.terms_name}}</h3>
-            <h3>{{AS.terms}}</h3>
-            <h3>{{AS.cost_name}}</h3>
-            <h3>{{AS.cost}}</h3>
-          {% endfor %}
-        </section>
-        </div>
 
-        <div id='arch_content' style="display: none;">
-          <section id="archx">
-          {% for AR in Architecture %}
-            <h2>{{AR.name}}</h2>
-            <h3>{{AR.description}}</h3>
-            <h3>{{AR.schematic_desing_name}}:</h3>
-            {% for ARSD in Paragraphs_Arch_SD %}
-              <p>- {{ARSD.paragraph}} </p>
-            {% endfor %}
-            <h3>{{AR.desing_development_name}}:</h3>
-            {% for ARDD in Paragraphs_Arch_DD %}
-              <p>- {{ARDD.paragraph}} </p>
-            {% endfor %}
-            <h3>{{AR.construction_documents_name}}</h3>
-            <h3>{{AR.construction_documents_description}}</h3>
-            {% for ARCD in Paragraphs_Arch_CD %}
-              <p>- {{ARCD.paragraph}} </p>
-            {% endfor %}
-            <h3>{{AR.terms_name}}:{{AR.terms}}</h3>
-            <h3>{{AR.cost_name}}:{{AR.cost}}</h3>
-          {% endfor %}
-        </section>
-        </div>
-
-        <div id='indesign_content' style="display: none;">
-        <section id="inx">
-          {% for ID in Interior_design %}
-            <h2>{{ID.name}}</h2>
-            <h3>{{ID.description}}</h3>
-            <h3>{{ID.paragraphs_name}}:</h3>
-            {% for PID in Paragraphs_ID %}
-              <p>- {{PID.paragraph}} </p>
-            {% endfor %}
-            <h3>{{ID.terms_name}}:{{ID.terms}}</h3>
-            <h3>{{ID.cost_name}}:{{ID.cost}}</h3>
-          {% endfor %}
-        </section>
-        </div>
-
-        <div id='prdesign_content' style="display: none;">
-        <section id="prx">
-          {% for PD in Product_design %}
-            <h2>{{PD.name}}</h2>
-            <h3>{{PD.description}}</h3>
-            <h3>{{PD.paragraphs_name}}:</h3>
-            {% for PPD in Paragraphs_PD %}
-              <p>- {{PPD.paragraph}} </p>
-            {% endfor %}
-            <h3>{{PD.terms_name}}:{{PD.terms}}</h3>
-            <h3>{{PD.cost_name}}:{{PD.cost}}</h3>
-          {% endfor %}
-        </section>
-        </div>
       <div style="height:40px"></div>
       </div>
 
-  <!--Footer-->
-  <footer>
-    <div class="container">
-      <!--Social icons-->
-      <div style="float: right;">
-        <img src="{% static 'img/facebook.png' %}" style='max-height:20px;' alt="fb">
-        <img src="{% static 'img/mail.png' %}" style='max-height:20px;' alt="fb">
-        <img src="{% static 'img/heart.png' %}" style='max-height:20px;' alt="fb">
-        <img src="{% static 'img/bulb.png' %}" style='max-height:20px;' alt="fb">
-      </div>
-      <div style="float: left;">
-        <p>AG architecture © 2017</p>
-      </div>
-    </div>
-  </footer>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://malsup.github.com/jquery.cycle.all.js"></script>
+
   <script>
-    $(document).ready(function(){
-      $('.mainlogo').each(function(){
-        $(this).animate({opacity:'0.2'},1);
-        $(this).mouseover(function(){
-          $(this).stop().animate({opacity:'0.8'},600);
-        });
-        $(this).mouseout(function(){
-          $(this).stop().animate({opacity:'0.2'},300);
-        }); }); });
-  </script>
-  <script>
-  if(window.screen.width > 480) {
+  if(window.screen.width > 80) {
     $(document).ready(function() {
       $('.slider1').cycle({
           fx:     'fade',
@@ -214,14 +114,5 @@
 
   });
   </script>
-  <script>
-      $(window).on('load', function () {
-        var $preloader = $('#page-preloader'),
-            $spinner   = $preloader.find('.spinner');
-        $spinner.fadeOut();
-        $preloader.delay(350).fadeOut('slow');
-    });
-  </script>
 
-</body>
-</html>
+{% endblock %}

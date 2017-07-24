@@ -1,28 +1,13 @@
 {% extends "homecontacttemp.html" %}
 {% load staticfiles %}
 
-{% block headin %}
-<script>
-if (screen && screen.width > 480) {
-  document.write('<script src="static/js/app.js"><\/script>');
-}
-</script>
-<link rel="stylesheet" href="{% static 'css/home.css' %}" type = "text/css"/>
-<style>
-BODY {
-background: url("{% static 'img/mainimg.jpg' %}");
-background-size: cover;}
-
-
-</style>
-{% endblock %}
-{% block menu%}
+{% block menu %}
 <div class="lang">
   <li class="dropdown-top">
     <a class="dropdown-top" >EN</a>
     <ul class="dropdown-inside">
-    <li><a href="/">RU</a></li>
-    <li><a href="/">UA</a></li>
+    <li><a href="/ru/home/">RU</a></li>
+    <li><a href="/ua/home/">UA</a></li>
     </ul>
   </li>
 </div>

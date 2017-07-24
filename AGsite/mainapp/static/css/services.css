@@ -1,115 +1,81 @@
-#page-preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    z-index: 100500;
-}
 
-#page-preloader .spinner {
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    background: url('static/img/logo.png') no-repeat 50% 50%;
-    margin: -16px 0 0 -16px;
-}
 
 BODY {
-  background-color: black;
+  background-color: white;
 font-family: "CENTURY GOTHIC", "Helvetica Neue",Helvetica,Arial,sans-serif;
 font-size: 22px;
 position: relative;
 }
-
-.mainlogo {
- position: relative;
- height: 40%;
- top: 0;
- width: 100%;
- opacity: 0.55;
- z-index: 1;
+.mainlogo{
+  background-color: #191919;
 }
 
-.mainlogo img{
-  margin-top: 10%;
-}
 
-.navbar {
-position: relative;
-top:0;
-width: 100%;
-opacity: 0.55;
-border-top: 0;
-border-bottom: 0;
-border-left: 0;
-border-right: 0;
-border-radius: 0;
-}
-.navbar .navbar-nav {
-display: inline-block;
-float: none;
-vertical-align: middle;
-}
-.navbar .navbar-collapse {
-text-align: center;
-}
-/*  for mobile menu-button
-.navbar-toggle {
-position: relative;
-text-align: left;
-float: right;
-left: -42%;
-}*/
-.collapse {
-display: block;
-}
-footer {
-position: fixed;
-width: 100%;
-height: 20px;
-left: 0;
-bottom: 0;
-font-size: 10px;
-background-color: #333;
-color: #fff;
-opacity: 0.6;
-text-align: right;
-}
+
+
 
 
 @media screen and (min-width: 480px) {
 
 
+  /*.stext {
+
+    display: inline-block;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    top:0;
+    left:0;
+    width: 48.8%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30%;
+  }*/
   .sphoto {
     display:inline-block;
 
     margin-top: 0;
 
     background-color: transparent;
+    width: 69%;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   .stext {
-    display:inline-block;
+  /*  display:inline-block;
     position: relative;
-    margin-top: 5px;
+    margin-left: 15px;
+    margin-top: 15px;
     top:0;
     left:0;
-    max-width: 600px;
+    width: 40.8%;
+    background-position: 50% 50%;*/
+    display: inline-block;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    top:0;
+    left:0;
+    width: 47%;
+    margin-top: 0.5%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 40vh;
+
   }
 
   .slider {
     position: relative;
-    opacity: 0.6;
+    opacity: 1;
   }
 
   .sphoto img {
-    min-height: 150px;
-    max-width: 600px;
-    opacity: 0.6;
+    position: relative;
+    width: 100%;
+    opacity: 1;
 
   }
 
@@ -117,8 +83,78 @@ text-align: right;
 
     text-shadow: 2px 2px #000;
     filter: invert(100%);
-    font-size: 46px;
+    font-size: 30px;
 }
+
+
+
+.stext {
+  position: relative;
+  color: #ccc;
+  text-decoration: none;
+  padding-bottom: 6px;
+
+}
+
+.stext:hover {
+  color: #ccc;
+}
+
+.stext:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 1s ease-in-out 0s;
+  transition: all 1s ease-in-out 0s;
+}
+
+.stext:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+.slider {
+  position: relative;
+  color: #ccc;
+  text-decoration: none;
+  padding-top: 6px;
+
+}
+
+.slider:hover {
+  color: #ccc;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  top: 0;
+  left: 0;
+  background-color: #ccc;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 1s ease-in-out 0s;
+  transition: all 1s ease-in-out 0s;
+}
+
+.slider:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
 
 .stext h2 {
   text-transform: uppercase;
@@ -128,65 +164,109 @@ text-align: right;
   top:20%;
   left: 20%;
   right: 20%;
-  font-size: 50px;
+  font-size: 30px;
   z-index: 6;
+
+}
+  .service {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
-.sphotomob {display: none;}
+  .service h2 {
+      font-size: 25px;
+  }
+  .service h3 {
+      font-size: 15px;
+  }
+  .service p {
+      font-size: 10px;
+  }
 
 }
 
 
 @media (max-width: 480px) {
-  .mainlogo {
 
-   height: 30%;
- }
 
-  .sphoto {display: none;}
 
-  .sphotomob {
+
+  .sphoto {
     display:inline-block;
-    position: relative;
-    margin-top: 0px;
+
+    margin-top: 0;
+
     background-color: transparent;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
   }
-  .stextmob {
-    display:inline-block;
-    margin-top: 10px;
 
+  .stext {
+
+    display: inline-block;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
     top:0;
     left:0;
-
     width: 100%;
+    margin-top: 1.5%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 45vh;
+
   }
-  .sphotomob img {
 
-
-    width:100%;
-    opacity: 0.7;
-    z-index: 2;
+  .slider {
+    position: relative;
+    opacity: 1;
   }
 
-  .stextmob :hover {
+  .sphoto img {
+    position: relative;
+    width: 100%;
+    opacity: 1;
+
+  }
+
+
+
+  .stext h2 {
+    text-transform: uppercase;
+    position: absolute;
+
+    color: #fff;
+    top:20%;
+    left: 20%;
+    right: 20%;
+    font-size: 30px;
+    z-index: 6;
+  }
+  .stext:hover {
 
     text-shadow: 2px 2px #000;
     filter: invert(100%);
     font-size: 30px;
-  }
+}
 
-  .stextmob h2 {
-  text-transform: uppercase;
-  position: absolute;
+.service {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
-  color: #fff;
-
-  left: 10%;
-  right: 10%;
-  font-size: 35px;
-  opacity: 1;
-  z-index: 5;
-  }
+.service h2 {
+    font-size: 25px;
+}
+.service h3 {
+    font-size: 15px;
+}
+.service p {
+    font-size: 10px;
+}
 
 
 

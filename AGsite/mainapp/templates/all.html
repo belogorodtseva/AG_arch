@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+  <title>AG architecture</title>
+  <meta charset="utf-8">
+  {% load staticfiles %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}" type = "text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+  {% block headin %}
+  {% endblock %}
+
+
+</head>
+
+<body>
+<div id="p_prldr"><center><div class="contpre">
+  <span class="svg_anm"></span>
+  <img src="{% static 'img/logo.png' %}"alt="AG" id = 'blabla'>
+</div></center></div>
+
+
+<!--Main Logo-->
+<div class="mainlogo" style="z-index:1;">
+  <center>
+  <div class="mainimg">
+    <a href="/">
+  <img src="{% static 'img/logo.png' %}"alt="AG" id = 'blabla'>
+    </a>
+  </div>
+  </center>
+</div>
+
+  {% block allcontent %}
+  {% endblock %}
+
+  <!--Footer-->
+  <footer>
+    <div class="container">
+      <!--Social icons-->
+      <div style="float: right;">
+        <img src="{% static 'img/facebook.png' %}" style='max-height:20px;' alt="fb">
+        <img src="{% static 'img/mail.png' %}" style='max-height:20px;' alt="fb">
+        <img src="{% static 'img/heart.png' %}" style='max-height:20px;' alt="fb">
+        <img src="{% static 'img/bulb.png' %}" style='max-height:20px;' alt="fb">
+      </div>
+      <!--Footer`s info<div id="particles-js"></div>-->
+      <div style="float: left;">
+        <p>AG architecture © 2017</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--Change opacity of mainlogo by moving mouse-->
+  <script>
+  if(window.screen.width > 480) {
+  $(document).ready(function(){
+    $('.mainimg').each(function(){
+      $(this).animate({opacity:'0.3'},1);
+      $(this).mouseover(function(){
+        $(this).stop().animate({opacity:'1.0'},600);
+      });
+      $(this).mouseout(function(){
+        $(this).stop().animate({opacity:'0.3'},300);
+      }); }); });
+  }
+  </script>
+
+  <!--Preloader-->
+
+  <script type="text/javascript">$(window).on('load', function () {
+    var $preloader = $('#p_prldr'),
+        $svg_anm   = $preloader.find('.svg_anm');
+    $svg_anm.fadeOut();
+    $preloader.delay(500).fadeOut('slow');
+});</script>
+
+
+</body>

@@ -1,92 +1,35 @@
-BODY {
-  background-color: black;
-font-family: "CENTURY GOTHIC", "Helvetica Neue",Helvetica,Arial,sans-serif;
-font-size: 22px;
-position: relative;
-}
-
-.mainlogo {
- position: absolute;
-
- top: 0;
- width: 100%;
- opacity: 0.55;
- z-index: 2;
-}
-
-.mainlogo img{
-  margin-top: 10%;
-}
-
-.navbar {
-position: relative;
-top:0;
-width: 100%;
-opacity: 0.55;
-border-top: 0;
-border-bottom: 0;
-border-left: 0;
-border-right: 0;
-border-radius: 0;
-}
-.navbar .navbar-nav {
-display: inline-block;
-float: none;
-vertical-align: middle;
-}
-.navbar .navbar-collapse {
-text-align: center;
-}
-/*  for mobile menu-button
-.navbar-toggle {
-position: relative;
-text-align: left;
-float: right;
-left: -42%;
-}*/
-.collapse {
-display: block;
-}
-footer {
-position: fixed;
-width: 100%;
-height: 20px;
-left: 0;
-bottom: 0;
-font-size: 10px;
-background-color: #333;
-color: #fff;
-opacity: 0.6;
-text-align: right;
-}
 
 .arch {
   display:inline-block;
   margin-top: 0px;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
 
 }
 .archproject {
+
   display: inline-block;
   background-size: cover;
   background-position: 50% 50%;
   position: relative;
   top:0;
   left:0;
-  width: 48.8%;
+  width: 49%;
+  margin-top: 1.5%;
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
   padding-top: 30%;
 }
 
+
+
 .archprojecttext {
   background-color: white;
   overflow: hidden;
-  opacity: 0.6;
-
+  opacity: 0.9;
+  color: black;
   text-transform: uppercase;
   position: absolute;
   top:0;
@@ -113,98 +56,92 @@ float: left;
 -webkit-margin-end: 0.4em;
 }
 
+.mainlogo{
+  background-color: #191919;
+}
 
 
 
 
 
-@media screen and (min-width: 480px) {
-  .slider {
-    display: none;
+
+@media (min-width: 1025px) {
+
+  .archproject {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray; /* IE 6-9 */
+  /*Добавим вот такой вот код*/
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+  /*конец кода с transition*/
   }
-
-  #scroller {
-      position: relative;
-      top:0;
-      opacity: 0.45;
-      z-index: 1;
-      height: 40%;
+  .archproject:hover {
+    -webkit-filter: none;
+    -moz-filter: none;
+    -ms-filter: none;
+    -o-filter: none;
+    filter: none;
+    filter: none; /* IE 6-9 */
   }
-  #scroller .innerScrollArea {
-      overflow: hidden;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-  }
-  #scroller ul {
-      padding: 0;
-      margin: 0;
-      position: relative;
-  }
-
-  #scroller li {
-      padding: 0;
-      margin: 0;
-      list-style-type: none;
-      position: absolute;
-  }
-
 
 }
 
 
-@media (max-width: 480px) {
-  .mainlogo {
+@media (max-width: 1025px) {
 
-   z-index: 2;
- }
+  .arch {
 
- .slider img {
-   height: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 
- }
-
- .slider {
-   position: relative;
-   top:0;
-   width: 100%;
-   z-index: 1;
-   height: 30%;
-   opacity: 0.6;
-   overflow: hidden;
- }
-
-  #scroller {display:none;}
-
-
-
+  }
   .archproject {
 
     margin-top: 10px;
-    width: 100%;
+    width: 90%;
     padding-top: 55%;
 
   }
 
   .archprojecttext{
-    opacity: 0.7;
-    width:60%;
+    opacity: 0.8;
+    width:25%;
   }
 
   .archproject h2 {
     -webkit-margin-before: 0.1em;
     -webkit-margin-after: 0.1em;
   float: left;
-  font-size: 30px;
+  width: 90%;
+  font-size: 45px;
+  writing-mode:tb-rl;
+
   }
   .archproject h3 {
-  -webkit-margin-before: 0.1em;
-  -webkit-margin-after: 0.1em;
-  font-size: 15px;
-  float: right;
-  color:black;
+  display: none;
   }
 
+  .rotate {
+    transform: rotate(180deg);
+  }
+
+}
+
+@media (max-width:480px){
+
+  .archproject h2 {
+
+
+  font-size: 20px;
+    width: 80%;
+
+
+  }
 }

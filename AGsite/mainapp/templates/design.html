@@ -1,29 +1,10 @@
 {% extends "archdesigntempl.html" %}
 {% load staticfiles %}
 
-{% block content %}
-<!--Main Photos-->
-<div class="slider">
-  <img id='imga1' src="{% static 'img/headphoto/d1.jpg' %}" />
-  <img id='imga2' src="{% static 'img/headphoto/d2.jpg' %}" />
-  <img id='imga3' src="{% static 'img/headphoto/d3.jpg' %}" />
-  <img id='imga4' src="{% static 'img/headphoto/d4.jpg' %}" />
-  <img id='imga4' src="{% static 'img/headphoto/d4.jpg' %}" />
-</div>
+{% block xcontent %}
 
-<div id="scroller" style="width: 100%; margin: 0 auto;">
-  <div id="slid" class="innerScrollArea">
-      <ul>
-          <!-- Define photos here -->
-          <li><img id="img1" src="{% static 'img/headphoto/d1.jpg' %}" width="auto" height="100%" /></li>
-          <li><img id="img2" src="{% static 'img/headphoto/d2.jpg' %}" width="auto" height="100%" /></li>
-          <li><img id="img3" src="{% static 'img/headphoto/d3.jpg' %}" width="auto" height="100%" /></li>
-          <li><img id="img4" src="{% static 'img/headphoto/d4.jpg' %}" width="auto" height="100%" /></li>
-          <li><img id="img5" src="{% static 'img/headphoto/d5.jpg' %}" width="auto" height="100%" /></li>
 
-      </ul>
-  </div>
-</div>
+
 <!--Menu-->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -37,4 +18,41 @@
     </div>
   </div>
 </nav>
+
+<!--Main Content-->
+
+<div class="arch" >
+    {% for AP in Arch_projects %}
+
+      {% if AP.side == 'L' %}
+
+        <div class="archproject" style="background-image:url({{ AP.mainimg.url }}); margin-left: 15px;">
+
+          <a href="{% url 'slideshow' pk=AP.pk %}">
+            <div class="archprojecttext" >
+            <h2>{{AP.name}}</h2>
+            <h3>{{AP.description}}</h3>
+          </div>
+          </a>
+        </div>
+      {% endif %}
+      {% if AP.side == 'R' %}
+        <div class="archproject"  onmouseover="this.style.backgroundImage='url({{ AP.mainimgchange.url }})'" onmouseout="this.style.backgroundImage='url({{ AP.mainimg.url }})'">
+          <a href="{% url 'slideshow' pk=AP.pk %}">
+            <div class="archprojecttext" style="left:0; right:auto;">
+            <h2 style="float:left;">{{AP.name}}</h2>
+            <h3 style="float:right">{{AP.description}}</h3>
+          </div>
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+</div>
+
+
+
+
+
+<div style="height:40px"></div>
+
 {% endblock %}
