@@ -28,9 +28,9 @@
     </div>
   </nav>
 
-
+<div class="contactblock">
   <div class="col-sm-4 contactform">
-    <h3>CONTACT ME</h3>
+    <center><h3>CONTACT ME</h3></center>
     <form id="form" method="post">
       {% csrf_token %}
       <input id="email" name="email" type="text" placeholder="E-MAIL">
@@ -49,18 +49,21 @@
     </form>
   </div>
   <div class="col-sm-4 contact">
-          <p>+380734725404</p>
-          <p>agarchitecture13@gmail.com</p>
+    <br>
+          <center><p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +380734725404</p></center>
+          <center><p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> agarchitecture13@gmail.com</p></center>
           <hr>
+
           <p> AG architecture - архитектурная мастерская, основанная 2016 года в Киеве, молодым архитектором – Андреем Глущенко.</p>
+
 <p> Концептуальный подход мастерской AG architecture - простой, эргономичный, качественный и лаконичный дизайн, одновременно отличается высокой степенью комфорта и вниманием к деталям. Практические разработки мастерской включают также градостроительные проекты, проекты торговых и офисных центров, проекты жилых домов, ресторанов, квартир и тому подобное.
-</p><p> В нашей мастерской большая часть работы над проектом уходит на продумывание функциональных деталей: привычки человека, комфортно ли ему будет пользоваться комплектующими, которые мы выбрали для его интерьера и т.д. В результате, заказчик видит, что выполненный интерьер индивидуален и создан специально для него, наслаждается комфортом каждый день и четко знает, за что заплатил деньги.
-</p><p> Андрей Глущенко получил степень бакалавра архитектуры в Киевском национальном университете строительства и архитектуры (КНУСА) в 2016 году.
-</p>
+
   </div>
   <div class="col-sm-4 contact">
-         <img src="{% static 'img/face.png' %}" style='width:100%; height:auto;' alt="Adrey">
+         <img src="{% static 'img/face.png' %}" style='' alt="Adrey">
   </div>
+
+</div>
 
 
 

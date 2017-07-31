@@ -3,6 +3,7 @@
 
 {% block headin %}
   <link rel="stylesheet" href="{% static 'css/services.css' %}" type = "text/css"/>
+  <link rel="stylesheet" href="{% static 'css/swiper.css' %}" type = "text/css"/>
 
   <style>
   BODY {
@@ -24,6 +25,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://malsup.github.com/jquery.cycle.all.js"></script>
+  <!-- Swiper JS -->
+  <script src="/static/js/swiper.min.js"></script>
 
   <script>
   if(window.screen.width > 80) {
@@ -46,6 +49,33 @@
       });
     });
   }
+  </script>
+  <script>
+  $(document).ready(function () {
+    var swiper1 = new Swiper('.swiper-container1', {
+       effect: 'fade',
+       autoplay: 2000,
+       speed:1000,
+       autoplayDisableOnInteraction:false,
+   });
+   var swiper2 = new Swiper('.swiper-container2', {
+      effect: 'fade',
+      autoplay: 2000,
+      speed:1000,
+      autoplayDisableOnInteraction:false,
+  });
+  var swiper3 = new Swiper('.swiper-container3', {
+     effect: 'fade',
+     autoplay: 2000,
+     speed:1000,
+     autoplayDisableOnInteraction:false,
+ });
+ var swiper4 = new Swiper('.swiper-container4', {
+    effect: 'fade',
+    autoplay: 2000,
+    speed:1000,
+    autoplayDisableOnInteraction:false,
+});});
   </script>
   <script>
     $(document).ready(function(){

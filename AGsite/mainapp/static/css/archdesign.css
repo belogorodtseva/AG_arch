@@ -5,6 +5,7 @@
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
+  margin-bottom: 3%;
 
 }
 .archproject {
@@ -65,7 +66,7 @@ float: left;
 
 
 
-@media (min-width: 1025px) {
+@media (min-width: 1366px) {
 
   .archproject {
     -webkit-filter: grayscale(100%);
@@ -92,8 +93,57 @@ float: left;
 
 }
 
+@media (max-width: 1366px) and (min-width: 700px) {
 
-@media (max-width: 1025px) {
+  .arch {
+
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+
+  }
+  .archproject {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray; /* IE 6-9 */
+  /*Добавим вот такой вот код*/
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+  /*конец кода с transition*/
+  }
+
+  .rotate {
+    transform: rotate(180deg);
+  }
+
+  .archproject h3 {
+  display: none;
+  }
+
+  .archprojecttext{
+    opacity: 0.7;
+    width:30%;
+  }
+
+  .archproject h2 {
+    -webkit-margin-before: 0.1em;
+    -webkit-margin-after: 0.1em;
+  float: left;
+  width: 90%;
+  font-size: 4vw;
+  writing-mode:tb-rl;
+  }
+
+}
+
+
+@media (max-width: 700px) {
 
   .arch {
 
@@ -122,7 +172,6 @@ float: left;
   width: 90%;
   font-size: 45px;
   writing-mode:tb-rl;
-
   }
   .archproject h3 {
   display: none;

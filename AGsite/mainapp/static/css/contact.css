@@ -8,10 +8,7 @@ position: relative;
   background-color: #191919;
 }
 
-.contactform h3 {
-  margin-left: 35%;
-  margin-right: 35%;
-}
+
 
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
@@ -169,5 +166,68 @@ textarea:hover {
 
 #submit:hover {
   color: #e2dedb;
+
+}
+
+.contact img{
+  width: 100%;
+  height: auto;
+
+}
+
+@media screen and (max-width:700px){
+  .contactblock{
+    width: 100%;
+  }
+  .contactform{
+    width: 100%;
+  }
+  .contact{
+    width: 100%;
+  }
+  .contact p{
+    font-size: 3.5vw;
+  }
+
+}
+
+@media screen and (min-width:700px) and (max-width:1365px) {
+  .contactblock{
+    width: 100%;
+  }
+  .contactform{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .contact{
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .contact p{
+    font-size: 2vw;
+  }
+
+}
+
+@media screen and (min-width:1365px){
+  .contactblock{
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 13%;
+  }
+
+  .contact p{
+    font-size: 1vw;
+    margin-bottom: 9%;
+  }
+
+  .contact img{
+    width: 50vh;
+    height: auto;
+    position: fixed;
+    right: 7vw;
+    bottom: 0;
+  }
 
 }

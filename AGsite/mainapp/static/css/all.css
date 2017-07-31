@@ -126,7 +126,40 @@ z-index: 30;}
    width: 100%;
    left: 5px;
    right: 5px;
-   margin-top: 8px;
+
+ }
+
+ .icons{
+   float: right;
+   width: 50%;
+   margin-top: 2px;
+   margin-bottom: 2px;
+ }
+
+
+ .icons img {
+   max-width: 8%;
+   height: auto;
+   margin-right: 1%;
+   max-height: 35px;
+   opacity: 0.6;
+   cursor: pointer;
+ }
+
+ .icons img:hover {
+
+   opacity: 1;
+ }
+
+ .logofoot{
+   float: left;
+   width: 49%;
+   margin-top: 2px;
+   margin-bottom: 2px;
+ }
+ .logofoot p{
+   float: left;
+   margin-left: 2vw;
  }
 
 
@@ -176,7 +209,7 @@ z-index: 30;}
     height: 40px;
     left: 0;
     bottom: 0;
-    font-size: 15px;
+    font-size: 18px;
     background-color: #191919;
     color: #fff;
     opacity: 0.8;
